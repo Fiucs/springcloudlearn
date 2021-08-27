@@ -1,0 +1,45 @@
+server:
+  port: 8020
+spring:
+  application:
+    name: order-service
+  cloud:
+    nacos:
+      server-addr: 127.0.0.1:8848
+      discovery:
+        username: nacos
+        password: nacos
+        namespace: public
+        group: DEFAULT_GROUP
+        metadata:
+          test01 :
+            name: lee
+            address : bj
+
+#stock-service:
+#  ribbon:
+##    指定配置类后 将@LoadBalance 及restTemplate的配置类去掉
+#    NFLoadBalancerRuleClassName: com.alibaba.cloud.nacos.ribbon.NacosRule
+#ribbon:
+# eager‐load:
+#  # 开启ribbon饥饿加载
+#  enabled: true
+#  # 配置mall‐user使用ribbon饥饿加载，多个使用逗号分隔
+#  clients: stock-service
+#升级feign日志等级
+logging:
+  level:
+    com.lee.ordernacosopenfeign.feign: debug
+#配置feign日志
+feign:
+  client:
+    config:
+#      对应的微服务
+      stock-service:
+        loggerLevel: FULL
+#        连接时间
+        connectTimeout: 5000
+#        请求处理超时时间
+        readTimeout: 2000
+        requestInterceptors[0]: #配置拦截器
+          com.lee.ordernacosopenfeign.interceptor.FeignAuthRequestInterceptor
