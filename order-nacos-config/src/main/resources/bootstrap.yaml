@@ -1,0 +1,28 @@
+
+spring:
+  cloud:
+    nacos:
+      config:
+        server-addr: 127.0.0.1:8848
+        #        指定默认的读取配置文件
+        file-extension: yaml
+        username: nacos
+        password: nacos
+        namespace: public
+        group: DEFAULT_GROUP
+        shared-configs:
+          - data-id : config01.yaml
+            refresh: true
+        extension-configs:
+          - data-id: config02.yaml
+            refresh: true
+      server-addr: 127.0.0.1:8848
+      discovery:
+        username: nacos
+        password: nacos
+        namespace: public
+        group: DEFAULT_GROUP
+        metadata:
+          test01 :
+            name: lee
+            address : bj

@@ -18,12 +18,16 @@
         <java.version>1.8</java.version>
         <springcloud.alibaba.versioin>2.2.6.RELEASE</springcloud.alibaba.versioin>
         <springcloud.versioin>Hoxton.SR9</springcloud.versioin>
+        <lombok.version>1.18.12</lombok.version>
     </properties>
 
     <modules>
         <module>order-nacos</module>
         <module>stock-nacos</module>
         <module>order-service-ribbon</module>
+        <module>order-nacos-config</module>
+        <module>order-nacos-openfeign</module>
+        <module>order-nacos-sentinel</module>
     </modules>
     <dependencies>
         <dependency>
@@ -39,6 +43,8 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter</artifactId>
         </dependency>
+
+
     </dependencies>
 
     <dependencyManagement>
@@ -67,7 +73,12 @@
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
-
+            <dependency>
+                <groupId>org.projectlombok</groupId>
+                <artifactId>lombok</artifactId>
+                <version>${lombok.version}</version>
+                <scope>provided</scope>
+            </dependency>
         </dependencies>
 
     </dependencyManagement>

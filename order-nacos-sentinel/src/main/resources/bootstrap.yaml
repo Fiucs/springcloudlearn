@@ -1,0 +1,58 @@
+server:
+  port: 8024
+spring:
+  application:
+    name: order-nacos-sentinel
+  cloud:
+    nacos:
+      config:
+        server-addr: 127.0.0.1:8848
+        #        指定默认的读取配置文件
+        file-extension: yaml
+        username: nacos
+        password: nacos
+        namespace: public
+        group: DEFAULT_GROUP
+        shared-configs:
+          - data-id : config01.yaml
+            refresh: true
+        extension-configs:
+          - data-id: config02.yaml
+            refresh: true
+      server-addr: 127.0.0.1:8848
+      discovery:
+        username: nacos
+        password: nacos
+        namespace: public
+        group: DEFAULT_GROUP
+        metadata:
+          test01 :
+            name: lee
+            address : bj
+    sentinel:
+      transport:
+        port: 8719
+        dashboard: 127.0.01:8900
+      enabled: true
+#      是否折叠显示
+      web-context-unify: false
+      datasource:
+        ds1:
+          nacos:
+#            如果开启了nacos权限验证 则用户名和密码必填
+            username: nacos
+            password: nacos
+#            nacos地址
+            server-addr: 127.0.0.1:8848
+#            nacos中指定配置文件
+            data-id: order-nacos-sentinel
+            group-id: DEFAULT_GROUP
+#            模式，流控
+            rule-type: flow
+#            naocs中的文件模式
+            data-type: json
+
+feign:
+  sentinel:
+    enabled: true
+
