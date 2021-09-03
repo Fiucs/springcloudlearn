@@ -28,6 +28,8 @@
         <module>order-nacos-config</module>
         <module>order-nacos-openfeign</module>
         <module>order-nacos-sentinel</module>
+        <module>seata-order-test</module>
+        <module>seata-stock-test</module>
     </modules>
     <dependencies>
         <dependency>
