@@ -1,0 +1,5 @@
+server:
+  port: 8030
+
+
+#配置nacos注册中心
