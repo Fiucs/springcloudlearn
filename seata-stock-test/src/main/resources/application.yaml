@@ -1,15 +1,15 @@
 
 server:
-  port: 8025
+  port: 8026
 
 spring:
   application:
-    name: seata-order-test
+    name: seata-stock-test
   datasource:
     username: root
     password: 12345dfg
     driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://localhost:3306/seata_order_test?characterEncoding=utf8&useSSL=false&serverTimezone=UTC&
+    url: jdbc:mysql://localhost:3306/seata_stock_test?characterEncoding=utf8&useSSL=false&serverTimezone=UTC&
 
   cloud:
     nacos:
@@ -45,7 +45,7 @@ seata:
       namespace: 5a3c7d6c-f497-4d68-a71a-2e5e3340b3ca
   service:
     vgroupMapping:
-      beijing: my_default
+      beijing: default
     grouplist:
       default: 127.0.0.1:8091
     enable-degrade: false

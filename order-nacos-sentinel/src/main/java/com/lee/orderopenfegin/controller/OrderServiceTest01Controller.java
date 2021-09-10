@@ -35,7 +35,8 @@ public class OrderServiceTest01Controller {
         String res = restTemplate.getForObject("http://stock-service/stockService/test01", String.class);
         return "下单成功:"+port+res;
     }
-    @SentinelResource(value ="test02" )
+//    不指定则会走全局的限流异常
+//    @SentinelResource(value ="test02" )
     @RequestMapping("/test02")
     public String orderTest02() throws InterruptedException {
 //        Thread.sleep(5000);

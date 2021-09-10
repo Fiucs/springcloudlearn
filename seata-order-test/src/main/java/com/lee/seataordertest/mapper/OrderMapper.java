@@ -1,7 +1,7 @@
-package com.lee.mapper;
+package com.lee.seataordertest.mapper;
 
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
-import com.lee.entity.Order;
+import com.lee.seataordertest.entity.Order;
 
 /**
  * @description: 订单测试

@@ -22,9 +22,9 @@ public class StockServiceTest01Controller {
     private String port;
     @RequestMapping("/test01/{id}")
     public String orderTest01(@PathVariable(value = "id") Long id){
-        if (atomicInteger.incrementAndGet() % 2==0){
-            Integer a=1/0;
-        }
+//        if (atomicInteger.incrementAndGet() % 2==0){
+//            Integer a=1/0;
+//        }
         return id+"库存扣减成功1："+port;
     }
     @RequestMapping("/test02/{id}")

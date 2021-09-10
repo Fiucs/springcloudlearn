@@ -51,8 +51,47 @@ spring:
             rule-type: flow
 #            naocs中的文件模式
             data-type: json
+    alibaba:
+      seata:
+        tx-service-group: beijing #配置事务分组
+
 
 feign:
   sentinel:
     enabled: true
+  client:
+    config:
+      default:
+        connectTimeout: 1000000
+        readTimeout: 100000
+
+
+
+
+seata:
+  registry:
+    #    配置seata注册中心
+    type: nacos
+    nacos:
+      server-addr: 127.0.0.1:8848  # seata server 所在的nacos服务地址
+      application: seata-server # seata的服务名
+      username: nacos
+      password: nacos
+      group: SEATA_GROUP
+      namespace: 5a3c7d6c-f497-4d68-a71a-2e5e3340b3ca
+  config:
+    type: nacos
+    nacos:
+      server-addr: 127.0.0.1:8848  # seata server 所在的nacos服务地址
+      username: nacos
+      password: nacos
+      group: SEATA_GROUP
+      namespace: 5a3c7d6c-f497-4d68-a71a-2e5e3340b3ca
+  service:
+    vgroupMapping:
+      beijing: default
+    grouplist:
+      default: 127.0.0.1:8091
+    enable-degrade: false
+    disable-global-transaction: false
 

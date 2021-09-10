@@ -6,10 +6,10 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
 @MapperScan(value = "com.lee.seataordertest.mapper")
-public class SeataOrderTestApplication {
+public class SeataStockTestApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(SeataOrderTestApplication.class, args);
+        SpringApplication.run(SeataStockTestApplication.class, args);
     }
 
 }

@@ -1,4 +1,4 @@
-package com.lee.config;
+package com.lee.seataordertest.config;
 
 import com.alibaba.cloud.nacos.ribbon.NacosRule;
 import com.netflix.loadbalancer.IRule;

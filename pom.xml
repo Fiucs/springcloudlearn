@@ -30,6 +30,7 @@
         <module>order-nacos-sentinel</module>
         <module>seata-order-test</module>
         <module>seata-stock-test</module>
+        <module>api-gateway</module>
     </modules>
     <dependencies>
         <dependency>

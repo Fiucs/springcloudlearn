@@ -1,10 +1,10 @@
-package com.lee.seatastock;
+package com.lee.apigateway;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class SeataStockApplicationTests {
+class ApiGatewayApplicationTests {
 
     @Test
     void contextLoads() {

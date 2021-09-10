@@ -1,13 +1,13 @@
-package com.lee.seatastock;
+package com.lee.apigateway;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class SeataStockApplication {
+public class ApiGatewayApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(SeataStockApplication.class, args);
+        SpringApplication.run(ApiGatewayApplication.class, args);
     }
 
 }

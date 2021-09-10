@@ -1,6 +1,6 @@
 package com.lee.orderserviceribbon;
 
-import com.lee.config.NacosRibbonConfig;
+import com.lee.seataordertest.config.NacosRibbonConfig;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.web.client.RestTemplateBuilder;

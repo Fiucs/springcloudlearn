@@ -1,5 +1,6 @@
 package com.lee.orderopenfegin.entity;
 
+import com.alibaba.fastjson.JSON;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -15,13 +16,17 @@ import lombok.NoArgsConstructor;
 public class R {
     private Integer code;
     private String msg;
+    private Object res;
     public  static R error(Integer code,String msg) {
-        return new R(code,msg);
+        return new R(code,msg,null);
     }
     public  static R error(String msg) {
-        return new R(500,msg);
+        return new R(500,msg,null);
     }
     public  static R ok(String msg) {
-        return new R(200,msg);
+        return ok(msg,null);
+    }
+    public  static R ok(String msg,Object res) {
+        return new R(200,msg, res);
     }
 }
