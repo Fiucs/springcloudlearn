@@ -27,6 +27,7 @@ ribbon:
   # 配置mall‐user使用ribbon饥饿加载，多个使用逗号分隔
   clients: stock-service
 
+
 feign:
   client:
     config:

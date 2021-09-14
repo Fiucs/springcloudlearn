@@ -3,3 +3,33 @@ server:
 
 
 #配置nacos注册中心
+spring:
+  application:
+    name: apigateway
+  cloud:
+
+    gateway:
+      discovery:
+        locator:
+          enabled: true
+#          lower-case-service-id: true
+
+      routes:
+        - id: stock-nacos
+#          uri: http://127.0.0.1:8021 # lblb指的是从nacos中按照名称获取微服务(的真实地址),并遵循负载均衡策略
+          uri: lb://stock-service # lblb指的是从nacos中按照名称获取微服务(的真实地址),并遵循负载均衡策略
+          predicates:
+            - Path=/stock-service/**
+          filters:
+            - StripPrefix=1
+    nacos:
+      discovery:
+        username: nacos
+        password: nacos
+        group: DEAFULT_GROUP
+        server-addr: 127.0.0.1:8848
+logging:
+  level:
+    com.alibaba.nacos.client.*: DEBUG
+
+
